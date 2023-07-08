@@ -4,13 +4,9 @@ const tasks = require("./routes/tasks");
 const connectDB = require("./db/connect");
 require("dotenv").config();
 //middleware
-
+app.use(express.static('./public'))
 app.use(express.json());
 
-//routes
-app.get("/happy", (req, res) => {
-  res.send("yay it worked!!!!");
-});
 
 app.use("/api/v1/tasks", tasks);
 
